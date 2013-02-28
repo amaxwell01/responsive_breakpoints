@@ -82,46 +82,46 @@ Percent
         @media (max-width: 100px) { @content; }
     }
     @else if $columns == 2 {
-        @media (min-width: 101px) and (max-width: 200px) { @content; }
+        @media (max-width: 200px) { @content; }
     }
     @else if $columns == 3 {
-        @media (min-width: 201px) and (max-width: 300px) { @content; }
+        @media (max-width: 300px) { @content; }
     }
     @else if $columns == 4 {
-        @media (min-width: 301px) and (max-width: 400px) { @content; }
+        @media (max-width: 400px) { @content; }
     }
     @else if $columns == 5 {
-        @media (min-width: 401px) and (max-width: 500px) { @content; }
+        @media (max-width: 500px) { @content; }
     }
     @else if $columns == 6 {
-        @media (min-width: 501px) and (max-width: 600px) { @content; }
+        @media (max-width: 600px) { @content; }
     }
     @else if $columns == 7 {
-        @media (min-width: 601px) and (max-width: 700px) { @content; }
+        @media (max-width: 700px) { @content; }
     }
     @else if $columns == 8 {
-        @media (min-width: 701px) and (max-width: 800px) { @content; }
+        @media (max-width: 800px) { @content; }
     }
     @else if $columns == 9 {
-        @media (min-width: 801px) and (max-width: 900px) { @content; }
+        @media (max-width: 900px) { @content; }
     }
     @else if $columns == 10 {
-        @media (min-width: 901px) and (max-width: 1000px) { @content; }
+        @media (max-width: 1000px) { @content; }
     }
     @else if $columns == 11 {
-        @media (min-width: 1001px) and (max-width: 1100px) { @content; }
+        @media (max-width: 1100px) { @content; }
     }
     @else if $columns == 12 {
-        @media (min-width: 1101px) and (max-width: 1200px) { @content; }
+        @media (max-width: 1200px) { @content; }
     }
     @else if $columns == 13 {
-        @media (min-width: 1201px) and (max-width: 1300px) { @content; }
+        @media (max-width: 1300px) { @content; }
     }
     @else if $columns == 14 {
-        @media (min-width: 1301px) and (max-width: 1400px) { @content; }
+        @media (max-width: 1400px) { @content; }
     }
     @else if $columns == 15 {
-        @media (min-width: 1401px) and (max-width: 1500px) { @content; }
+        @media (max-width: 1500px) { @content; }
     }
     @else if $columns == 16 {
         @media (min-width: 1501px) { @content; }
