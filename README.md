@@ -5,9 +5,9 @@ A simple framework to work with dynamic and responsive websites which need more 
 
 
 ## Setup a column framework which allows for finer control
-1 column === 100px
-2 columns === 200px
-etc. etc.
+* 1 column === 100px
+* 2 columns === 200px
+* etc. etc.
 
 ```sass
 @mixin breakpoint($columns) {
