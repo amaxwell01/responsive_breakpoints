@@ -29,7 +29,7 @@ A simple framework to work with dynamic and responsive websites which need more 
 
 ## Overkill?
 * This may look like overkill, but you don't HAVE to use all of them, just the ones you need (just like using a grid
-layout
+layout)
 * This methodology will give you the ability get finer control of your responsive websites in a way that people are 
 able to understand in a easy way
 
