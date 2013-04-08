@@ -28,10 +28,9 @@ A simple framework to work with dynamic and responsive websites which need more 
 ```
 
 ## Overkill?
-* This may look like overkill, but you don't HAVE to use all of them, just the ones you need (just like using a grid
+* Sure, this may look like overkill, but you don't HAVE to use all of them, just the ones you need (just like using a grid
 layout)
-* This methodology will give you the ability get finer control of your responsive websites in a way that people are 
-able to understand in a easy way
+* This methodology gives you finer control of your responsive websites in a way that you can understand
 
 
 ## You can use EM's or percent aswell
@@ -127,11 +126,7 @@ Percent
         @media (min-width: 1501px) { @content; }
     }
 }
-```
 
-
-## Example:
-```
 article {
     background: #BBB;
     float: left;
