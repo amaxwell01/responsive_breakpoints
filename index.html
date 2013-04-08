@@ -68,10 +68,9 @@
 <h2>Overkill?</h2>
 
 <ul>
-<li>This may look like overkill, but you don't HAVE to use all of them, just the ones you need (just like using a grid
+<li>Sure, this may look like overkill, but you don't HAVE to use all of them, just the ones you need (just like using a grid
 layout)</li>
-<li>This methodology will give you the ability get finer control of your responsive websites in a way that people are 
-able to understand in a easy way</li>
+<li>This methodology gives you finer control of your responsive websites in a way that you can understand</li>
 </ul><h2>You can use EM's or percent aswell</h2>
 
 <p>Em's</p>
@@ -165,30 +164,27 @@ able to understand in a easy way</li>
         <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="nt">1501px</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
     <span class="err">}</span>
 <span class="err">}</span>
+
+<span class="nt">article</span> <span class="err">{</span>
+    <span class="na">background</span><span class="o">:</span> <span class="mh">#BBB</span><span class="err">;</span>
+    <span class="na">float</span><span class="o">:</span> <span class="no">left</span><span class="err">;</span>
+    <span class="na">height</span><span class="o">:</span> <span class="mi">400</span><span class="kt">px</span><span class="err">;</span>
+    <span class="na">padding</span><span class="o">:</span> <span class="mi">20</span><span class="kt">px</span><span class="err">;</span>
+    <span class="na">width</span><span class="o">:</span> <span class="mi">65</span><span class="kt">%</span><span class="err">;</span>
+
+    <span class="k">@include</span><span class="nd"> breakpoint</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span> <span class="err">{</span>
+        <span class="na">width</span><span class="o">:</span> <span class="mi">75</span><span class="kt">%</span><span class="err">;</span>
+    <span class="err">}</span>
+
+    <span class="k">@include</span><span class="nd"> breakpoint</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="err">{</span>
+        <span class="na">width</span><span class="o">:</span> <span class="mi">50</span><span class="kt">%</span><span class="err">;</span>
+    <span class="err">}</span>
+
+    <span class="k">@include</span><span class="nd"> breakpoint</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="err">{</span>
+        <span class="na">width</span><span class="o">:</span> <span class="mi">100</span><span class="kt">%</span><span class="err">;</span>
+    <span class="err">}</span>
+<span class="err">}</span>
 </pre></div>
-
-<h2>Example:</h2>
-
-<pre><code>article {
-    background: #BBB;
-    float: left;
-    height: 400px;
-    padding: 20px;
-    width: 65%;
-
-    @include breakpoint(9) {
-        width: 75%;
-    }
-
-    @include breakpoint(7) {
-        width: 50%;
-    }
-
-    @include breakpoint(4) {
-        width: 100%;
-    }
-}
-</code></pre>
       </section>
 
     </div>
