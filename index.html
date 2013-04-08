@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Responsive breakpoints by amaxwell01</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/amaxwell01/responsive_breakpoints">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/amaxwell01/responsive_breakpoints/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/amaxwell01/responsive_breakpoints/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Responsive breakpoints</h1>
+          <p>A simple framework to work with dynamic and responsive websites which need more than 3 or 4 breakpoints</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/amaxwell01">amaxwell01</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>Responsive Columns</h1>
+
+<p>A simple framework to work with dynamic and responsive websites which need more than 3 or 4 breakpoints</p>
+
+<h2>Setup a column framework which allows for finer control</h2>
+
+<ul>
+<li>1 column === 100px</li>
+<li>2 columns === 200px</li>
+<li>etc. etc.</li>
+</ul><div class="highlight"><pre><span class="k">@mixin</span><span class="nf"> breakpoint</span><span class="p">(</span><span class="nv">$columns</span><span class="p">)</span> <span class="err">{</span>
+
+    <span class="k">@if</span> <span class="nv">$columns</span> <span class="o">==</span> <span class="mi">1</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">100px</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">2</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="nt">101px</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">200px</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">3</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="nt">201px</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">300px</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">extra-large</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="nt">301px</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+<span class="err">}</span>
+</pre></div>
+
+<h2>Overkill?</h2>
+
+<ul>
+<li>This may look like overkill, but you don't HAVE to use all of them, just the ones you need (just like using a grid
+layout)</li>
+<li>This methodology will give you the ability get finer control of your responsive websites in a way that people are 
+able to understand in a easy way</li>
+</ul><h2>You can use EM's or percent aswell</h2>
+
+<p>Em's</p>
+
+<div class="highlight"><pre><span class="k">@mixin</span><span class="nf"> breakpoint</span><span class="p">(</span><span class="nv">$columns</span><span class="p">)</span> <span class="err">{</span>
+
+    <span class="k">@if</span> <span class="nv">$columns</span> <span class="o">==</span> <span class="mi">1</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">100em</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">2</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="nt">101em</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">200em</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">3</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="nt">201em</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">300em</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">extra-large</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="nt">301em</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+<span class="err">}</span>
+</pre></div>
+
+<p>Percent</p>
+
+<div class="highlight"><pre><span class="k">@mixin</span><span class="nf"> breakpoint</span><span class="p">(</span><span class="nv">$columns</span><span class="p">)</span> <span class="err">{</span>
+
+    <span class="k">@if</span> <span class="nv">$columns</span> <span class="o">==</span> <span class="mi">1</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">10</span><span class="err">%</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">2</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="nt">10</span><span class="nc">.1</span><span class="err">%</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">20</span><span class="err">%</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">3</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="nt">20</span><span class="nc">.1</span><span class="err">%</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">30</span><span class="err">%</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">extra-large</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="nt">30</span><span class="nc">.1</span><span class="err">%</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+<span class="err">}</span>
+</pre></div>
+
+<h1>Full Code Example:</h1>
+
+<div class="highlight"><pre><span class="k">@mixin</span><span class="nf"> breakpoint</span><span class="p">(</span><span class="nv">$columns</span><span class="p">)</span> <span class="err">{</span>
+
+    <span class="k">@if</span> <span class="nv">$columns</span> <span class="o">==</span> <span class="mi">1</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">100px</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">2</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">200px</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">3</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">300px</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">4</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">400px</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">5</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">500px</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">6</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">600px</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">7</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">700px</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">8</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">800px</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">9</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">900px</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">10</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">1000px</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">11</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">1100px</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">12</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">1200px</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">13</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">1300px</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">14</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">1400px</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">15</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="nt">1500px</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+    <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">columns</span> <span class="o">==</span> <span class="nt">16</span> <span class="err">{</span>
+        <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="nt">1501px</span><span class="o">)</span> <span class="err">{</span> <span class="o">@</span><span class="nt">content</span><span class="o">;</span> <span class="err">}</span>
+    <span class="err">}</span>
+<span class="err">}</span>
+</pre></div>
+
+<h2>Example:</h2>
+
+<pre><code>article {
+    background: #BBB;
+    float: left;
+    height: 400px;
+    padding: 20px;
+    width: 65%;
+
+    @include breakpoint(9) {
+        width: 75%;
+    }
+
+    @include breakpoint(7) {
+        width: 50%;
+    }
+
+    @include breakpoint(4) {
+        width: 100%;
+    }
+}
+</code></pre>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("6750698");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
