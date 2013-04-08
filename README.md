@@ -128,3 +128,27 @@ Percent
     }
 }
 ```
+
+
+## Example:
+```
+article {
+    background: #BBB;
+    float: left;
+    height: 400px;
+    padding: 20px;
+    width: 65%;
+
+    @include breakpoint(9) {
+        width: 75%;
+    }
+
+    @include breakpoint(7) {
+        width: 50%;
+    }
+
+    @include breakpoint(4) {
+        width: 100%;
+    }
+}
+```

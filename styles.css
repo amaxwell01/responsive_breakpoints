@@ -1,0 +1,43 @@
+/* ========================
+   Breakpoints
+   ======================== */
+/* ========================
+   Styling
+   ======================== */
+* {
+  box-sizing: border-box;
+  font-family: "Droid Sans", sans-serif;
+  margin: 0;
+  padding: 0; }
+
+aside {
+  background: #CCC;
+  float: left;
+  height: 400px;
+  padding: 20px;
+  width: 35%; }
+  @media (max-width: 900px) {
+    aside {
+      width: 25%; } }
+  @media (max-width: 700px) {
+    aside {
+      width: 50%; } }
+  @media (max-width: 400px) {
+    aside {
+      width: 100%; } }
+
+article {
+  background: #BBB;
+  float: left;
+  height: 400px;
+  padding: 20px;
+  width: 65%; }
+  @media (max-width: 900px) {
+    article {
+      width: 75%; } }
+  @media (max-width: 700px) {
+    article {
+      width: 50%; } }
+  @media (max-width: 400px) {
+    article {
+      width: 100%; } }
