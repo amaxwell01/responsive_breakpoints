@@ -1,0 +1,105 @@
+/* ========================
+   Breakpoints
+   ======================== */
+@mixin breakpoint($columns) {
+    @if $columns == 1 {
+        @media (max-width: 100px) { @content; }
+    }
+    @else if $columns == 2 {
+        @media (max-width: 200px) { @content; }
+    }
+    @else if $columns == 3 {
+        @media (max-width: 300px) { @content; }
+    }
+    @else if $columns == 4 {
+        @media (max-width: 400px) { @content; }
+    }
+    @else if $columns == 5 {
+        @media (max-width: 500px) { @content; }
+    }
+    @else if $columns == 6 {
+        @media (max-width: 600px) { @content; }
+    }
+    @else if $columns == 7 {
+        @media (max-width: 700px) { @content; }
+    }
+    @else if $columns == 8 {
+        @media (max-width: 800px) { @content; }
+    }
+    @else if $columns == 9 {
+        @media (max-width: 900px) { @content; }
+    }
+    @else if $columns == 10 {
+        @media (max-width: 1000px) { @content; }
+    }
+    @else if $columns == 11 {
+        @media (max-width: 1100px) { @content; }
+    }
+    @else if $columns == 12 {
+        @media (max-width: 1200px) { @content; }
+    }
+    @else if $columns == 13 {
+        @media (max-width: 1300px) { @content; }
+    }
+    @else if $columns == 14 {
+        @media (max-width: 1400px) { @content; }
+    }
+    @else if $columns == 15 {
+        @media (max-width: 1500px) { @content; }
+    }
+    @else if $columns == 16 {
+        @media (min-width: 1501px) { @content; }
+    }
+}
+
+
+
+/* ========================
+   Styling
+   ======================== */
+* {
+    box-sizing: border-box;
+    font-family: 'Droid Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+aside {
+    background: #CCC;
+    float: left;
+    height: 400px;
+    padding: 20px;
+    width: 35%;
+
+    @include breakpoint(9) {
+        width: 25%;
+    }
+
+    @include breakpoint(7) {
+        width: 50%;
+    }
+
+    @include breakpoint(4) {
+        width: 100%;
+    }
+}
+
+article {
+    background: #BBB;
+    float: left;
+    height: 400px;
+    padding: 20px;
+    width: 65%;
+
+    @include breakpoint(9) {
+        width: 75%;
+    }
+
+    @include breakpoint(7) {
+        width: 50%;
+    }
+
+    @include breakpoint(4) {
+        width: 100%;
+    }
+}
